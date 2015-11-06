@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <!--<SearchableBar-->
+    <!--android:id="@+id/searchablebar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--app:layout_anchorGravity="bottom|right|end"-->
+    <!--</SearchableBar>-->
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        tools:context=".MapsActivity"
+        tools:layout="@layout/abc_action_bar_up_container">
+
+    </fragment>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/map_toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#FFFFFFFF"
+        app:cardElevation="8dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFFFF"
+            android:minHeight="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/btnCleanSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_toLeftOf="@+id/toolbar_title"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:minHeight="50dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_clear"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#FFFFFFFF"
+                android:hint="Search Places"
+                android:maxLines="1"
+                android:textIsSelectable="false"
+                android:textSize="18dp"
+                android:clickable="true" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.CardView>
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="30dp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="10dp"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_fab_label="">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_satellite"
+            fab:fab_size="mini"
+            fab:fab_label="Toggle satellite view" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_navigation18"
+            fab:fab_size="mini"
+            fab:fab_label="Navigate" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mode_edit"
+            fab:fab_size="mini"
+            fab:fab_label="Clear markers" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share"
+            fab:fab_size="mini"
+            fab:fab_label="Share" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+    <!--<FrameLayout android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="right">-->
+
+        <!--<com.github.clans.fab.FloatingActionMenu-->
+            <!--android:id="@+id/menu_labels_right"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--fab:menu_labels_ellipsize="end"-->
+            <!--fab:menu_labels_singleLine="true"-->
+            <!--fab:menu_backgroundColor="#ccffffff"-->
+            <!--fab:menu_labels_position="right">-->
+
+            <!--<com.github.clans.fab.FloatingActionButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_edit"-->
+                <!--fab:fab_size="mini"-->
+                <!--fab:fab_label="Menu item 1" />-->
+
+            <!--<com.github.clans.fab.FloatingActionButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_edit"-->
+                <!--fab:fab_size="mini"-->
+                <!--fab:fab_label="Menu item 2" />-->
+
+            <!--<com.github.clans.fab.FloatingActionButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_edit"-->
+                <!--fab:fab_size="mini"-->
+                <!--fab:fab_label="@string/app_name" />-->
+
+        <!--</com.github.clans.fab.FloatingActionMenu>-->
+        <!--&lt;!&ndash;<android.support.design.widget.FloatingActionButton&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/plus"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginRight="30dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginBottom="60dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_navigation"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_gravity="right|bottom"&ndash;&gt;-->
+            <!--&lt;!&ndash;app:backgroundTint="@color/md_teal_500"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--</FrameLayout>-->
+
+    <FrameLayout
+        android:id="@+id/searchArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+</RelativeLayout>
