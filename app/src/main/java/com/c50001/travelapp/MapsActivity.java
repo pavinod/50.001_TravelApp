@@ -49,10 +49,10 @@ public class MapsActivity extends FragmentActivity {
 
     private List<Marker> markerList;
 
-    private FloatingActionButton fab0;
-    private FloatingActionButton fab1;
-    private FloatingActionButton fab2;
-    private FloatingActionButton fab3;
+    private FloatingActionButton fab0; //Satellite
+    private FloatingActionButton fab1; //Navigate
+    private FloatingActionButton fab2; //clear markers
+    private FloatingActionButton fab3; //share
 
 
 
@@ -107,6 +107,23 @@ public class MapsActivity extends FragmentActivity {
                 mMap.clear();
             }
         });
+
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareIt();
+            }
+        });
+    }
+
+    //share function
+    private void shareIt() {
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = "This is supposed to be a list of places that are being visited in the day: will get back to this later.";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Agenda for the day: ");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Visiting " + shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
 
     /**
